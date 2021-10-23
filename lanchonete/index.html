@@ -105,7 +105,7 @@
     <div class="row">
       <div class="col position-relative">
         <div class="meuNextArrow position-absolute bg-dark p-1 text-white">
-          <span class="fa fa-chevron-right"></span>
+          <span class="bi bi-chevron-right"></span>
         </div>
 
         <div class="
@@ -116,7 +116,7 @@
               p-1
               text-white
             ">
-          <span class="fa fa-chevron-left"></span>
+          <span class="bi bi-chevron-left"></span>
         </div>
 
         <div class="carro_um">
@@ -179,28 +179,37 @@
     </div>
   </div>
 
-  <div id="app" class="container-fluid">
-    <div class="row row-cols-sm-1 row-cols-2 p-2 g-3">
-      <div class="card p-3 cardImg mx-2 shadow" v-for="(place,index) in places" :key="places.id">
-        <div class="row">
-          <div class="col-4 col-sm-3">
-            <img :src="place.img" class=" place-img" />
-          </div>
-          <div class="col">
-            <p class="upper place-name">{{place.name }}</p>
-            <p class="upper place-address">
-              {{ place.address}}
-            </p>
-            <img :src="place.star" width="12" height="12" /> {{place.rate}}
-            <img :src="place.clock" width="20" height="20" />
-            {{place.timeWait}}
-            <p v-if="place.opened" class="place-opened">aberto agora</p>
-            <p v-else class="place-closed">fechado agora</p>
-          </div>
+  <div id="app" class="container-fluid mt-5">
+    
+<div class="row row-cols-1 row-cols-md-2">
+
+    <div class="card shadow " v-for="(place,index) in places" :key="places.id" style="border-radius: 20px; ">
+      <div class="row ">
+        <div class="col-4"> 
+          <img :src="place.img" class=" place-img img-fluid" />
+        </div>
+        <div class="col mt-4">
+         <p class=" place-name">{{place.name }}</p>
+         <p class=" place-address">
+           {{ place.address}}
+         </p>
+         <img :src="place.star" width="12" height="12" /> {{place.rate}}
+         <img :src="place.clock" width="20" height="20" />
+         {{place.timeWait}}
+         <p v-if="place.opened" class="place-opened">aberto agora</p>
+         <p v-else class="place-closed">fechado agora</p>
         </div>
       </div>
-    </div>
+      
+     
+        
+          
+         </div>
   </div>
+      
+        </div>
+      </div>
+    
 
   <script src="JS/jquery-3.6.0.js"></script>
 
